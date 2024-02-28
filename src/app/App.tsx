@@ -6,11 +6,12 @@ import { Suspense, lazy } from "react";
 
 import "./styles/index.scss";
 
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames/classNames";
+import { classNames } from "../shared/lib/classNames/classNames";
 
-const MainPageLazy = lazy(() => import("./pages/MainPage/MainPage"));
-const AboutPageLazy = lazy(() => import("./pages/AboutPage/AboutPage"));
+import { useTheme } from "./providers/ThemeProvider";
+
+const MainPageLazy = lazy(() => import("../pages/MainPage/ui/MainPage"));
+const AboutPageLazy = lazy(() => import("../pages/AboutPage/ui/AboutPage"));
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
