@@ -2,7 +2,7 @@ import webpack from "webpack";
 
 import { BuildOptions } from "./types/config";
 import { buildPlugins } from "./buildPlugins";
-import { buildLoders } from "./buildLoders";
+import { buildLoders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { buildDevServer } from "./buldDevServer";
 

@@ -1,2 +1,1 @@
-import MainPage from "./ui/MainPage";
-export { MainPage };
+export * from "./ui/MainPage";
