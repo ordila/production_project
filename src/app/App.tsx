@@ -6,13 +6,23 @@ import { useTheme } from "./providers/ThemeProvider";
 
 import { AppRouter } from "./providers/router";
 import { NavBar } from "widgets/NavBar";
+import { SiderBar } from "widgets/SideBar";
+import { Suspense } from "react";
+
+import "shared/config/i18n/i18n";
 
 const App = () => {
   const { theme } = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
-      <NavBar />
-      <AppRouter />
+      <Suspense fallback="">
+        <NavBar />
+
+        <div className="content-page">
+          <SiderBar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
